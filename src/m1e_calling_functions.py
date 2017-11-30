@@ -44,6 +44,7 @@ def main():
     goodbye()
     hello()
     hello()
+    hello()
 
     print('---------------------------------------------')
     print('The remaining output comes from CALLING')
