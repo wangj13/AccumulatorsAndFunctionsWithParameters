@@ -10,7 +10,7 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_sum_powers()
+    #run_test_sum_powers()
     run_test_sum_powers_in_range()
 
 
@@ -29,13 +29,13 @@ def run_test_sum_powers():
     print('Testing the   sum_powers   function:')
     print('--------------------------------------------------')
     # Test 1:
-    expected = 9
-    answer = sum_powers(2, 3)
+    expected = 3.80826
+    answer = sum_powers(5, -0.3)
     print('Test 1 expected', expected)
     print('       actual:', answer)
     # Test 2:
-    expected = 98
-    answer = sum_powers(3, 4)
+    expected = 144.45655
+    answer = sum_powers(100, 0.1)
     print('Test 2 expected', expected)
     print('       actual:', answer)
     # Test 3:
@@ -45,10 +45,17 @@ def run_test_sum_powers():
     print('       actual:', answer)
 
 def sum_powers(n, p):
-    sum = 0
+    total = 0
     for k in range(n):
-        sum = sum + (k + 1)**p
-    return sum
+        total = total + ((k+1)**p)
+    return total
+
+
+
+    #sum = 0
+    #for k in range(n):
+        #sum = sum + (k + 1)**p
+    #return sum
     """
     What comes in:  A non-negative integer n
                     and a number p.
@@ -84,8 +91,8 @@ def run_test_sum_powers_in_range():
     print('Testing the   sum_powers_in_range   function:')
     print('--------------------------------------------------')
     # Test 1:
-    expected = 9
-    answer = sum_powers_in_range(1,2,3)
+    expected = 142.384776
+    answer = sum_powers_in_range(3, 100 , 0.1)
     print('Test 1 expected', expected)
     print('       actual:', answer)
     # Test 2:
@@ -99,10 +106,16 @@ def run_test_sum_powers_in_range():
     print('Test 3 expected', expected)
     print('       actual:', answer)
 def sum_powers_in_range(m, n, p):
-    sum = 0
-    for k in range(n):
-        sum = sum + (m + k)**p
-    return sum
+    total = 0
+    for k in range(n-m+1):
+        total = total + ((m+k)**p)
+    return total
+
+
+    #sum = 0
+    #for k in range(n):
+        #sum = sum + (m + k)**p
+    #return sum
     """
     What comes in:  Non-negative integers m and n, with n >= m,
                     and a number p.
