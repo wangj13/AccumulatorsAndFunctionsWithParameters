@@ -30,28 +30,35 @@ def run_test_sum_cosines():
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
     # Test 1:
-    expected = 123
+    expected = 0.13416
     answer = sum_cosines(3)
     print('Test 1 expected', expected)
     print('       actual:', answer)
 
     # Test 2:
-    expected = 123
+    expected = -0.235
     answer = sum_cosines(5)
     print('Test 2 expected', expected)
     print('       actual:', answer)
 
     # Test3:
-    expected = 123
+    expected = -0.519
     answer = sum_cosines(4)
     print('Test3 expected', expected)
     print('      actual:', answer)
 def sum_cosines(n):
     total = 0
-    for k in range (n):
-        total = total + math.cos(n+1)
+    for k in range(n+1):
+        total = total + (math.cos(k))
 
     return total
+
+
+    #total = 0
+    #for k in range (n):
+        #total = total + math.cos(n+1)
+
+    #return total
     """
     What comes in:  A non-negative integer n.
     What goes out:  The sum of the cosines of the integers
@@ -74,7 +81,7 @@ def sum_cosines(n):
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this function.
+    # DONE: 4. Implement this function.
     #   It TESTS the  sum_square_roots  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -86,8 +93,8 @@ def run_test_sum_square_roots():
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
     # Test 1:
-    expected = 123
-    answer = sum_square_roots(2)
+    expected = 11.854408
+    answer = sum_square_roots(5)
     print('Test 1 expected', expected)
     print('       actual:', answer)
     # Test 2:
@@ -102,10 +109,16 @@ def run_test_sum_square_roots():
     print('       actual:', answer)
 def sum_square_roots(n):
     total = 0
-    for k in range (n):
-        total = total + math.sqrt(n+2)
+    for k in range(n+1):
+        total = total + math.sqrt(k*2)
 
     return total
+
+    #total = 0
+    #for k in range (n):
+        #total = total + math.sqrt(n+2)
+
+    #return total
 
     """
     What comes in:  A non-negative integer n.

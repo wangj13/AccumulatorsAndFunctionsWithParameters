@@ -44,6 +44,11 @@ def run_test_sum_squares():
 
 
 def sum_squares(n):
+    total = 0
+    for k in range(n):
+        total = total + ((k + 1)**2)
+
+    return total
     """
     What comes in:  A positive integer n.
     What goes out:  The sum of the squares of the integers
@@ -53,11 +58,11 @@ def sum_squares(n):
       If n is 5,
       this function returns 1 + 4 + 9 + 16 + 25,   which is 55.
     """
-    total = 0
-    for k in range(n):
-        total = total + ((k + 1) ** 2)
+    #total = 0
+    #for k in range(n):
+        #total = total + ((k + 1) ** 2)
 
-    return total
+    #return total
 
 
 # ----------------------------------------------------------------------
