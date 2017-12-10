@@ -15,9 +15,9 @@ import m3t_tester
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_sum_of_digits()
-    run_test_digits_in_cube()
-    run_test_digits_in_power()
+    #run_test_sum_of_digits()
+    #run_test_digits_in_cube()
+    #run_test_digits_in_power()
     run_test_fancy_sums_of_digits()
     # ------------------------------------------------------------------
     # DONE: 9. DO THIS LAST!
@@ -65,6 +65,12 @@ def run_test_sum_of_digits():
     answer = sum_of_digits(826)
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
+
+    # Test 5:
+    expected = 6
+    answer = sum_of_digits(123)
+    print('Test 5 expected:', expected)
+    print('       actual:', answer)
 
     # ------------------------------------------------------------------
     # TO DO: 2 (continued).
@@ -152,27 +158,32 @@ def run_test_digits_in_cube():
     print('-----------------------------------------------------')
 
     # Test 1:
-    expected = 64
-    answer = digits_in_cube(4)
+    expected = 8
+    answer = digits_in_cube(2)
     print('Test 1 expected', expected)
     print('       actual:', answer)
 
     # Test 2:
-    expected = 125
+    expected = 8
     answer = digits_in_cube(5)
     print('Test 2 expected', expected)
     print('       actual:', answer)
 
     # Test 3:
-    expected = 8
-    answer = digits_in_cube(2)
+    expected = 9
+    answer = digits_in_cube(6)
     print('Test 3 expected', expected)
     print('       actual:', answer)
 
 def digits_in_cube(n):
-    digit_cube = n**3
-    sds = sum_of_digits(digit_cube)
-    return(sds)
+    digit_cube = 0
+    digit_cube = sum_of_digits(n**3)
+
+    return digit_cube
+
+
+
+
 
     """
     What comes in:  A positive integer.
@@ -208,27 +219,32 @@ def run_test_digits_in_power():
     print('Testing the   digits_in_power   function:')
     print('--------------------------------------------------')
     # Test 1:
-    expected = 27
+    expected = 9
     answer = digits_in_power(3, 4)
     print('Test 1 expected', expected)
     print('       actual:', answer)
 
     # Test 2:
-    expected = 16
+    expected = 7
     answer = digits_in_power(2, 4)
     print('Test 2 expected', expected)
     print('       actual:', answer)
 
     # Test 3:
-    expected = 25
+    expected = 7
     answer = digits_in_power(5, 2)
     print('Test 3 expected', expected)
     print('       actual:', answer)
 
 def digits_in_power(n, k):
-    digit_power = n*n
-    sts = sum_of_digits(digit_power)
-    return(sts)
+    digit_power = n**k
+    saa = sum_of_digits(digit_power)
+    return saa
+
+
+    #digit_power = n**k
+    #sts = sum_of_digits(digit_power)
+    #return sts
 
     """
     What comes in:  Two positive integers, n and k.
@@ -253,7 +269,7 @@ def digits_in_power(n, k):
 def run_test_fancy_sums_of_digits():
     """ Tests the   fancy_sums_of_digits   function. """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement this function.
+    # DONE: 7. Implement this function.
     #   It TESTS the  fancy_sums_of_digits  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -265,7 +281,7 @@ def run_test_fancy_sums_of_digits():
     print('Testing the   fancy_sums_of_digits   function:')
     print('--------------------------------------------------')
     # Test 1:
-    expected = 10000
+    expected = 1
     answer = fancy_sums_of_digits(10)
     print('Test 1 expected', expected)
     print('       actual:', answer)
@@ -277,8 +293,8 @@ def run_test_fancy_sums_of_digits():
     print('       actual:', answer)
 
     # Test 3:
-    expected = 35
-    answer = fancy_sums_of_digits(5)
+    expected = 124309
+    answer = fancy_sums_of_digits(35)
     print('Test 3 expected', expected)
     print('       actual:', answer)
     # ------------------------------------------------------------------
@@ -291,9 +307,16 @@ def run_test_fancy_sums_of_digits():
 
 
 def fancy_sums_of_digits(n):
-    digits_fancysum = n**1000
-    sas = sum_of_digits(digits_fancysum )
-    return(sas)
+    x = sum_of_digits(n**1000)
+    y = sum_of_digits(n**999)
+    digits_fancy_sum = sum_of_digits(x**y)
+
+    return digits_fancy_sum
+
+
+    #digits_fancysum = n**1000
+    #sas = sum_of_digits(digits_fancysum )
+    #return sas
 
     """
     What comes in:  A positive integer n.
