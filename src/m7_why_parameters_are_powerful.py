@@ -10,8 +10,8 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_circles()
-    run_test_better_draw_circles()
+    #run_test_draw_circles()
+    #run_test_better_draw_circles()
     run_test_even_better_draw_circles()
     # Un-comment the next lines when you are ready to use them.
     # run_test_better_draw_circles()
@@ -43,6 +43,19 @@ def run_test_draw_circles():
 
 
 def draw_circles():
+
+    window = rg.RoseWindow(800, 800)
+    center = rg.Point(200, 300)
+
+    for k in range(21):
+        circle = rg.Circle(center, k*10)
+        circle.pen = rg.Pen('pink', 7)
+        circle.attach_to(window)
+        window.render()
+
+    window.close_on_mouse_click()
+
+
     """
     -- Constructs a window whose width and height are both 400.
     -- Constructs and draws 21 rg.Circle objects such that:
@@ -55,32 +68,43 @@ def draw_circles():
     # Students:
     #   Do NOT touch this function - it has no TO DO in it.
     # ------------------------------------------------------------------
-    window = rg.RoseWindow(400, 400)
+    #window = rg.RoseWindow(400, 400)
 
-    center = rg.Point(200, 200)
-    for k in range(21):
-        circle = rg.Circle(center, 10 * k)
-        circle.attach_to(window)
-        window.render(0.05)  # Pauses for 0.05 seconds after rendering.
+    #center = rg.Point(200, 200)
+    #for k in range(21):
+        #circle = rg.Circle(center, 10 * k)
+        #circle.attach_to(window)
+        #window.render(0.05)  # Pauses for 0.05 seconds after rendering.
 
-    window.close_on_mouse_click()
+    #window.close_on_mouse_click()
 
 def run_test_better_draw_circles():
     print()
     print('--------------------------------------------------')
     print('Testing  better_draw_circles:  See graphics window')
     print('--------------------------------------------------')
-    better_draw_circles()
+    better_draw_circles(5)
 
-def better_draw_circles():
-    window = rg.RoseWindow(400, 400)
-    center = rg.Point(200,200)
-    for k in range(20):
-        circle = rg.Circle(center, 5 * k)
+def better_draw_circles(n):
+    window = rg.RoseWindow(800, 800)
+    center = rg.Point(300, 400)
+
+    for k in range(n):
+        circle = rg.Circle(center, k*n)
         circle.attach_to(window)
-        window.render(0.05)
+        window.render()
 
     window.close_on_mouse_click()
+
+
+    #window = rg.RoseWindow(400, 400)
+    #center = rg.Point(200,200)
+    #for k in range(20):
+        #circle = rg.Circle(center, 5 * k)
+        #circle.attach_to(window)
+        #window.render(0.05)
+
+    #window.close_on_mouse_click()
 
 
 
@@ -118,26 +142,46 @@ def run_test_even_better_draw_circles():
     print('--------------------------------------------------')
     print('Testing  draw_circles:  See graphics window')
     print('--------------------------------------------------')
-    even_better_draw_circles()
-def even_better_draw_circles():
-    window = rg.RoseWindow(800,800)
-    center1 = rg.Point(200,600)
-    center2 = rg.Point(300,500)
-    center3 = rg.Point(400,400)
-    for k in range (20):
-        circle1 = rg.Circle(center1, 10 * k)
+    even_better_draw_circles(25)
+def even_better_draw_circles(n):
+    window = rg.RoseWindow(800, 800)
+    center1 = rg.Point(100, 200)
+    center2 = rg.Point(200, 300)
+    center3 = rg.Point(300, 400)
+    for k in range(n):
+        circle1 = rg.Circle(center1, 12*k)
         circle1.attach_to(window)
-        window.render(0.05)
-    for k in range (25):
-        circle2 = rg.Circle(center2, 10 * k)
+        window.render()
+    for k in range(n):
+        circle2 = rg.Circle(center2, 15*k)
+        circle2.fill_color = 'pink'
         circle2.attach_to(window)
-        window.render(0.05)
-    for k in range (30):
-        circle3 = rg.Circle(center3, 10 * k)
+        window.render()
+    for k in range(n):
+        circle3 = rg.Circle(center3, 20*k)
         circle3.attach_to(window)
-        window.render(0.05)
-
+        window.render()
     window.close_on_mouse_click()
+
+
+    #window = rg.RoseWindow(800,800)
+    #center1 = rg.Point(200,600)
+    #center2 = rg.Point(300,500)
+    #center3 = rg.Point(400,400)
+    #for k in range (20):
+        #circle1 = rg.Circle(center1, 10 * k)
+        #circle1.attach_to(window)
+        #window.render(0.05)
+    #for k in range (25):
+        #circle2 = rg.Circle(center2, 10 * k)
+        #circle2.attach_to(window)
+        #window.render(0.05)
+    #for k in range (30):
+        #circle3 = rg.Circle(center3, 10 * k)
+        #circle3.attach_to(window)
+        #window.render(0.05)
+
+    #window.close_on_mouse_click()
 
 
 
